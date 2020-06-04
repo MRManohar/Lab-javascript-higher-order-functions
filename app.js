@@ -41,11 +41,51 @@ function isPrime(numberArray) {
     });
     return primeNumbers;
 }
-document.write(isPrime(numberArray));
+document.write(isPrime(numberArray) + "<br>");
+document.write("<br>" + "<--------------- Progression 4 ----------------------->" + "<br>");
+
+function isNonPrime(numberArray) {
+    let nonPrimeNumbers = numberArray.filter(function (num) {
+        let flag = 0;
+        for (let i = 2; i < num; i++) {
+            flag = 0;
+            if (num % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 1)
+            return num;
+    });
+    return nonPrimeNumbers;
+}
+document.write(isNonPrime(numberArray) + "<br>");
+
+
 document.write("<br>" + "<--------------- Progression 5 ----------------------->" + "<br>");
 // defining the isEven function by using Lamda Expression
 function isEven(numberArray) {
     let anotherEvenNumbers = numberArray.filter(num => (num % 2) === 0)
     return anotherEvenNumbers;
 }
-document.write(isEven(numberArray));
+document.write(isEven(numberArray) + "<br>");
+document.write("<br>" + "<--------------- Progression 6 ----------------------->" + "<br>");
+const myArray = [11, 34, 20, 5, 53, 16];
+
+function findSquareOfNumbers(myArray) {
+    let squareArray = myArray.map(function (item) {
+        return item * item;
+    });
+    return squareArray;
+}
+document.write(findSquareOfNumbers(myArray) + "<br>");
+document.write("<br>" + "<--------------- Progression 7 ----------------------->" + "<br>");
+const myArray1 = [2, 3, 5, 10];
+
+function multiply(myArray1) {
+    let multiplyArray = myArray1.reduce(function (intial, num) {
+        return intial * num;
+    }, 1);
+    return multiplyArray;
+}
+document.write(multiply(myArray1));
